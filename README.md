@@ -1,16 +1,30 @@
 # Blockchain Voting System
 
-Sistem e-voting berbasis blockchain menggunakan **Python** untuk memastikan transparansi, keamanan, dan keadilan dalam proses pemungutan suara.  
-Setiap suara dicatat dalam block, ditandatangani secara kriptografi, dan disinkronkan antar node.  
-Selain itu, sistem ini menghasilkan **receipt hash** unik untuk tiap pemilih (sebagai bukti inklusi), sehingga pemilih dapat memverifikasi bahwa suaranya tercatat tanpa membuka identitasnya.
+A blockchain-based e-voting system built with **Python** to ensure transparency, security, and fairness in the voting process.  
+Each vote is recorded in a block, cryptographically signed, and synchronized across nodes.  
+The system also generates a unique **receipt hash** for each voter (as proof of inclusion), allowing voters to verify that their vote has been recorded without exposing their identity.
 
 ---
 
-## ✨ Fitur Utama
-- **Keamanan**: Suara divalidasi dengan **public/private key** dan tanda tangan digital.  
-- **Membership Validation**: Hanya anggota sah (dari `membership_ids.json`) yang dapat memilih.  
-- **Anti-Duplikasi**: 1 anggota hanya bisa memberikan 1 suara.  
-- **Filter Kandidat**: Hanya dapat memilih *Candidate A* atau *Candidate B* (payload manipulasi otomatis ditolak).  
-- **Blockchain**: Vote disimpan dalam blockchain yang tidak dapat diubah.  
-- **Multi-node Sync**: Chain disinkronisasi antar beberapa node untuk konsistensi data.  
-- 🧾**Receipt Hash (ZKP-style)**: Setiap pemilih mendapat hash unik saat memilih, yang bisa dicatat/scan sebagai bukti bahwa suaranya benar-benar masuk ke blockchain (tanpa membuka identitas).  
+## Features
+
+- **Security**  
+  Votes are validated using **public/private keys** and digital signatures.
+
+- **Membership Validation**  
+  Only authorized members (listed in `membership_ids.json`) are eligible to vote.
+
+- **Anti-Duplication**  
+  Each member can cast only **one vote**.
+
+- **Candidate Filtering**  
+  Votes are restricted to *Candidate A* or *Candidate B* (any payload manipulation is automatically rejected).
+
+- **Immutable Blockchain**  
+  Votes are stored in a tamper-proof blockchain ledger.
+
+- **Multi-Node Synchronization**  
+  The chain is synchronized across multiple nodes for data consistency.
+
+- **Receipt Hash (ZKP-style)**  
+  Each voter receives a unique hash upon casting a vote, which can be stored or scanned as proof that their vote has been successfully included in the blockchain (without revealing identity).
